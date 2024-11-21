@@ -32,6 +32,7 @@ impl Error {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum GPUKind {
     Integrated,
     Discrete,
@@ -41,6 +42,7 @@ pub enum GPUKind {
 }
 
 #[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct GPU {
     pub kind: GPUKind,
     pub name: String,
