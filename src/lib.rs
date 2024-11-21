@@ -33,6 +33,7 @@ impl Error {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "specta", derive(specta::Type))]
 pub enum GPUKind {
     Integrated,
     Discrete,
@@ -43,6 +44,7 @@ pub enum GPUKind {
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "specta", derive(specta::Type))]
 pub struct GPU {
     pub kind: GPUKind,
     pub name: String,
